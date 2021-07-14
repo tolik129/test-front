@@ -1,0 +1,37 @@
+	<script src="js/app.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("tabs");
+var btns = header.getElementsByClassName("tabs__item");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+<script>
+  $(document).ready(function(){
+    $('.block__title').click(function(event){
+      if($('.spoler__text').hasClass('one')){
+        $('.block__title').not($(this)).removeClass('active');
+        $('.block__text').not($(this).next()).slideUp(300);
+      }
+      $(this).toggleClass('active').next().slideToggle(300);
+    });
+  });
+</script>
+
+<script>
+$(document).ready(function() {
+  $('.header__burger').click(function(event) {
+    $('.header__burger,.header__menu').toggleClass('active');
+    $('body').toggleClass('lock');
+  });
+});
+</script>
+</body>
+</html>
